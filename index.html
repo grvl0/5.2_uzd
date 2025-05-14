@@ -1,41 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kvadrātvienādojuma risinātājs</title>
 </head>
 <body>
-    <h1>Kavadrat vienadojuma risinatajs</h1>
+    <h1>Kvadrātvienādojuma risinātājs</h1>
+
     <p>
-        <span id="space"></span>
-    </p>
-    <p>
-        <input type="number" name="kvadrat" id="a" placeholder="a"> <input type="number" name="kvadrat" id="b" placeholder="b"> <input type="number" name="kvadrat" id="c" placeholder="c">
+        <input type="number" id="a" placeholder="a">
+        <input type="number" id="b" placeholder="b">
+        <input type="number" id="c" placeholder="c">
     </p>
 
     <button type="button" onclick="risin()">Risini</button>
 
-
+    <p>
+        <span id="space"></span>
+    </p>
 
     <script>
-        function risin(ax, bx, cx ) {
-            var ax = a.value 
-            var bx = b.value
-            var cx = c.value
+        function risin() {
+            
 
-            var D = (bx^2) - 4 * ax * cx 
+            ax = Number(a.value)
+            bx = Number(b.value)
+            cx = Number(c.value)
 
-            if (D<0) {
-                return false
-            } 
-            if (D>= 0 ) {
-                var x1 = (-bx + Math.sqrt(D) ) / 2*ax 
-                var x2 = (-bx - Math.sqrt(D) ) / 2*ax 
+            if (ax === 0) {
+                space.innerHTML = "Nav kvadrātvienādojums"
+                return
             }
-            space.innerHTML="Pirma sakne" + x1 + " " + "Otra sakne : " + x2 
-        }
 
+            D = bx * bx - 4 * ax * cx
+
+            if (D < 0) {
+                space.innerHTML = "Nav reālu sakņu"
+                return
+            }
+
+            x1 = (-bx + Math.sqrt(D)) / (2 * ax)
+            x2 = (-bx - Math.sqrt(D)) / (2 * ax)
+
+            if (x1 === x2) {
+                space.innerHTML = "Sakne: " + x1
+            } else {
+                space.innerHTML = "Pirmā sakne: " + x1 + "<br>Otra sakne: " + x2
+            }
+        }
     </script>
 </body>
 </html>
