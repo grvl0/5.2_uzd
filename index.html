@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Kavadrat vienadojuma risinatajs</h1>
+    <p>
+        <span id="space"></span>
+    </p>
+    <p>
+        <input type="number" name="kvadrat" id="a" placeholder="a"> <input type="number" name="kvadrat" id="b" placeholder="b"> <input type="number" name="kvadrat" id="c" placeholder="c">
+    </p>
+
+    <button type="button" onclick="risin()">Risini</button>
+
+
+
+    <script>
+        function risin(ax, bx, cx ) {
+            var ax = a.value 
+            var bx = b.value
+            var cx = c.value
+
+            var D = (bx^2) - 4 * ax * cx 
+
+            if (D<0) {
+                return false
+            } 
+            if (D>= 0 ) {
+                var x1 = (-bx + Math.sqrt(D) ) / 2*ax 
+                var x2 = (-bx - Math.sqrt(D) ) / 2*ax 
+            }
+            space.innerHTML="Pirma sakne" + x1 + " " + "Otra sakne : " + x2 
+        }
+
+    </script>
+</body>
+</html>
