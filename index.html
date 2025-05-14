@@ -24,24 +24,24 @@
         function risin() {
             
 
-            ax = Number(a.value)
-            bx = Number(b.value)
-            cx = Number(c.value)
+            a = Number(a.value)
+            b = Number(b.value)
+            c = Number(c.value)
 
-            if (ax === 0) {
+            if (a=== 0) {
                 space.innerHTML = "Nav kvadrātvienādojums"
                 return
             }
 
-            D = bx * bx - 4 * ax * cx
+            D = b * b - 4 * a * c
 
             if (D < 0) {
                 space.innerHTML = "Nav reālu sakņu"
                 return
             }
 
-            x1 = (-bx + Math.sqrt(D)) / (2 * ax)
-            x2 = (-bx - Math.sqrt(D)) / (2 * ax)
+            x1 = (-b + Math.sqrt(D)) / (2 * a)
+            x2 = (-b - Math.sqrt(D)) / (2 * ax)
 
             if (x1 === x2) {
                 space.innerHTML = "Sakne: " + x1
