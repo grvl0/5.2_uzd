@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="lv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kvadrātvienādojuma risinātājs</title>
 </head>
+
 <body>
     <h1>Kvadrātvienādojuma risinātājs</h1>
 
@@ -22,33 +24,48 @@
 
     <script>
         function risin() {
-            
+
 
             a = Number(a.value)
             b = Number(b.value)
             c = Number(c.value)
 
-            if (a=== 0) {
+            if (a === 0 || isNaN(a) || isNaN(b) || isNaN(c)) {
                 space.innerHTML = "Nav kvadrātvienādojums"
                 return
             }
+            var atb = saknes(a, b, disk(a, b, c))
+            if (atb === false) {
+                space.innerHTML = "Nav sakņu"
+            }
+            else {
+                space.innerHTML=`sakne 1:  + ${atb[0].toFixed(3)} , x2= ${atb[1].toFixed(3)}` 
+            }
 
-            D = b * b - 4 * a * c
+          
 
+
+        }
+
+
+        function disk(a, b, c) {
+            return b * b - 4 * a * c
+        }
+        function saknes(a, b, D) {
             if (D < 0) {
-                space.innerHTML = "Nav reālu sakņu"
-                return
+
+                return false
+            }
+            else {
+                x1 = (-b + Math.sqrt(D)) / (2 * a)
+                x2 = (-b - Math.sqrt(D)) / (2 * a)
+
+                return [x1, x2]
             }
 
-            x1 = (-b + Math.sqrt(D)) / (2 * a)
-            x2 = (-b - Math.sqrt(D)) / (2 * ax)
 
-            if (x1 === x2) {
-                space.innerHTML = "Sakne: " + x1
-            } else {
-                space.innerHTML = "Pirmā sakne: " + x1 + "<br>Otra sakne: " + x2
-            }
         }
     </script>
 </body>
+
 </html>
