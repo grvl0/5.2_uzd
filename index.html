@@ -11,9 +11,9 @@
     <h1>Kvadrātvienādojuma risinātājs</h1>
 
     <p>
-        <input type="number" id="a" placeholder="a">
-        <input type="number" id="b" placeholder="b">
-        <input type="number" id="c" placeholder="c">
+        <input type="number" id="ak" placeholder="a">
+        <input type="number" id="bk" placeholder="b">
+        <input type="number" id="ck" placeholder="c">
     </p>
 
     <button type="button" onclick="risin()">Risini</button>
@@ -26,9 +26,9 @@
         function risin() {
 
 
-            a = Number(a.value)
-            b = Number(b.value)
-            c = Number(c.value)
+            a = Number(ak.value)
+            b = Number(bk.value)
+            c = Number(ck.value)
 
             if (a === 0 || isNaN(a) || isNaN(b) || isNaN(c)) {
                 space.innerHTML = "Nav kvadrātvienādojums"
@@ -57,8 +57,8 @@
                 return false
             }
             else {
-                x1 = (-b + Math.sqrt(D)) / (2 * a)
-                x2 = (-b - Math.sqrt(D)) / (2 * a)
+               var x1 = (-b + Math.sqrt(D)) / (2 * a)
+                var x2 = (-b - Math.sqrt(D)) / (2 * a)
 
                 return [x1, x2]
             }
