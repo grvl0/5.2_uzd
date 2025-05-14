@@ -26,30 +26,32 @@
         function risin() {
 
 
-            a = Number(ak.value)
-            b = Number(bk.value)
-            c = Number(ck.value)
+            var a = Number(ak.value)
+            var b = Number(bk.value)
+            var c = Number(ck.value)
 
             if (a === 0 || isNaN(a) || isNaN(b) || isNaN(c)) {
                 space.innerHTML = "Nav kvadrātvienādojums"
                 return
             }
             var atb = saknes(a, b, disk(a, b, c))
+            
             if (atb === false) {
                 space.innerHTML = "Nav sakņu"
+                return
             }
             else {
-                space.innerHTML=`sakne 1:  + ${atb[0].toFixed(3)} , x2= ${atb[1].toFixed(3)}` 
+                space.innerHTML = `sakne 1:  + ${atb[0].toFixed(3)} , x2= ${atb[1].toFixed(3)}`
             }
 
-          
+
 
 
         }
 
 
         function disk(a, b, c) {
-            return b * b - 4 * a * c
+            return b * b - 4 * a * c ; 
         }
         function saknes(a, b, D) {
             if (D < 0) {
@@ -57,7 +59,7 @@
                 return false
             }
             else {
-               var x1 = (-b + Math.sqrt(D)) / (2 * a)
+                var x1 = (-b + Math.sqrt(D)) / (2 * a)
                 var x2 = (-b - Math.sqrt(D)) / (2 * a)
 
                 return [x1, x2]
